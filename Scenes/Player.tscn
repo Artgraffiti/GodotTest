@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Isaac.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Arrow.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/circle.png" type="Texture" id=4]
+
+[node name="Player" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Circle" type="Sprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 40, 0, 20, 40 )
+
+[node name="Arrow" type="Sprite" parent="."]
+position = Vector2( 50, 0 )
+rotation = -1.5708
+scale = Vector2( 0.8, 1 )
+texture = ExtResource( 3 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Arrow"]
+position = Vector2( 9.31323e-09, -50 )
+scale = Vector2( 1.25, 1 )
+
+[node name="Isaac" type="Sprite" parent="."]
+rotation = -1.5708
+texture = ExtResource( 1 )
